@@ -1,0 +1,21 @@
+"use strict";
+// src/index.ts
+Object.defineProperty(exports, "__esModule", { value: true });
+var Author_1 = require("./Author");
+var Book_1 = require("./Book");
+var Library_1 = require("./Library");
+var library = new Library_1.Library();
+var author1 = new Author_1.Author('J.K. Rowling', new Date('1965-07-31'));
+var book1 = new Book_1.Book('Harry Potter and the Philosopher\'s Stone', author1, new Date('1997-06-26'));
+var author2 = new Author_1.Author('J.R.R. Tolkien', new Date('1892-01-03'));
+var book2 = new Book_1.Book('The Hobbit', author2, new Date('1937-09-21'));
+library.addBook(book1);
+library.addBook(book2);
+console.log('List of books in the library:');
+library.listBooks();
+console.log('\nBorrowing "The Hobbit":');
+library.borrowBook('The Hobbit');
+library.listBooks();
+console.log('\nReturning "The Hobbit":');
+library.returnBook('The Hobbit');
+library.listBooks();
